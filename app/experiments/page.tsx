@@ -1,88 +1,55 @@
 import type { Metadata } from "next";
-import PageNav from "@/components/page-nav";
+import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Experiments & Certifications — Vishal Bhavar",
-  description:
-    "Certifications, continuous learning, and technical experiments by Vishal Bhavar.",
+  title: "Experiments & AI Labs — Vishal Bhavar",
+  description: "Technical experiments, research labs, and GenAI exploration by Vishal Bhavar.",
 };
-
-const CERTS = [
-  "Python Full Stack Development",
-  "Introduction to Generative AI",
-  "Infosys Springboard Virtual Internship 7.0 – Python",
-];
 
 const EXPERIMENTS = [
   {
     title: "Generative AI Integration Pipelines",
-    desc: "Exploring modern GenAI models and prompt-engineering patterns to enhance enterprise automation and developer workflows.",
+    desc: "Exploring modern GenAI models, prompt engineering, and LLM orchestration patterns for developer workflow automation.",
+    tags: ["Generative AI", "Python", "LLMs", "Prompt Engineering"],
   },
   {
-    title: "Linux Environment Automation Scripts",
-    desc: "Crafting specialized shell and Python scripts on Ubuntu for automated data backup, logging, and environment configuration.",
+    title: "Linux System Automation & Shell Scripting",
+    desc: "Crafting specialized Bash and Python scripts on Ubuntu for automated data backups, log auditing, and environment configuration.",
+    tags: ["Linux", "Ubuntu", "Bash", "Python Automation"],
+  },
+  {
+    title: "Real-time OpenCV Video Stream Processing",
+    desc: "Optimizing frame-rate processing for live webcam feeds, facial landmark detection, and low-latency computer vision pipelines.",
+    tags: ["OpenCV", "Computer Vision", "Real-time Video", "Python"],
   },
 ];
 
 export default function ExperimentsPage() {
   return (
     <>
-      <PageNav />
-      <main className="page">
-        <section className="page__hero">
-          <p className="page__hero-label">04 / Experiments</p>
-          <h1 className="page__hero-title">
-            Certifications &amp; Labs
-          </h1>
-          <p className="page__hero-desc">
-            Continuous learning, recognized certifications, and hands-on technical experiments with emerging technologies.
-          </p>
-        </section>
+      <Navbar />
+      <main style={{ paddingTop: "7rem", paddingBottom: "4rem" }}>
+        <section className="section" style={{ maxWidth: "1100px" }}>
+          <h1 className="section-title">Technical Experiments</h1>
+          <p className="section-subtitle">AI research labs, automation scripts, and experimental prototypes</p>
 
-        <div className="page__body">
-          <div className="section-block">
-            <h2 className="section-block__title">Certifications</h2>
-            <div className="cert-list">
-              {CERTS.map((cert) => (
-                <div key={cert} className="cert-item">
-                  <div className="cert-item__icon">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                      />
-                    </svg>
-                  </div>
-                  <span className="cert-item__text">{cert}</span>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.75rem", margin: "0 auto" }}>
+            {EXPERIMENTS.map((exp) => (
+              <div key={exp.title} className="glass-card" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <h2 style={{ fontSize: "1.3rem", fontWeight: "700", color: "#111827" }}>{exp.title}</h2>
+                <p style={{ color: "#4b5563", fontSize: "0.95rem", lineHeight: "1.6" }}>{exp.desc}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "auto", paddingTop: "0.5rem" }}>
+                  {exp.tags.map((t) => (
+                    <span key={t} className="skill-tag-pill">
+                      {t}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
-          <div className="section-block">
-            <h2 className="section-block__title">Ongoing Experiments</h2>
-            <div className="project-cards">
-              {EXPERIMENTS.map((exp) => (
-                <article key={exp.title} className="project-card">
-                  <h3 className="project-card__title" style={{ marginBottom: "0.6rem" }}>
-                    {exp.title}
-                  </h3>
-                  <p className="hero__intro-text" style={{ fontSize: "0.9rem", color: "rgba(0,0,0,0.62)" }}>
-                    {exp.desc}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </>

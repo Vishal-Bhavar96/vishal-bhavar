@@ -552,3 +552,616 @@ body {
     transform: translateY(-6px);
   }
 }
+
+/* ═══════════════════════════════════════════
+   SINGLE PROFILE PHOTO SHOWCASE
+   ═══════════════════════════════════════════ */
+.about-single-photo {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 380px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18), 0 0 25px rgba(37, 99, 235, 0.1);
+  border: 4px solid #ffffff;
+  transition: all 0.35s ease;
+  background: var(--light-blue);
+}
+
+.about-single-photo:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 22px 50px rgba(37, 99, 235, 0.28);
+}
+
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.photo-badge-accent {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════
+   VERCEL / STRIPE INSPIRED TECHNICAL EXPERTISE
+   ═══════════════════════════════════════════ */
+.vercel-expertise-section {
+  width: 100%;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, #070a12 100%);
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(37, 99, 235, 0.1);
+  color: #ffffff;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header & Badges */
+.vercel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.vercel-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+}
+
+.vercel-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+  animation: vercelPulse 2s infinite;
+}
+
+@keyframes vercelPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 14px #3b82f6; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.vercel-badge-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.vercel-title {
+  font-size: clamp(1.75rem, 2.5vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.vercel-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* Category Filter Tabs */
+.vercel-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vercel-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.vercel-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vercel-tab-btn--active {
+  background: var(--blue-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--blue-accent) !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* Bento Spotlight Card */
+.vercel-bento-hero {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+@media (max-width: 868px) {
+  .vercel-bento-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.bento-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.bento-desc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 680px;
+}
+
+.bento-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bento-pill-item {
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+
+.bento-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bento-stat-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+}
+
+.bento-stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #60a5fa;
+}
+
+.bento-stat-label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+/* Skill Cards Grid */
+.vercel-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.vercel-skill-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vercel-skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--glow-color, #3b82f6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vercel-skill-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(30, 41, 59, 0.75);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 25px var(--glow-color, rgba(37, 99, 235, 0.2));
+}
+
+.vercel-skill-card:hover::before {
+  opacity: 1;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.vercel-skill-card:hover .card-icon-wrapper {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-skill-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.card-category-name {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin-top: 0.3rem;
+}
+
+.card-footer-caps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.cap-pill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+
+
+/* ═══════════════════════════════════════════
+   EDUCATION SECTION LAYOUT
+   ═══════════════════════════════════════════ */
+.education-container {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.education-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  border-left: 4px solid var(--blue-accent);
+}
+
+.education-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.education-badge-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--blue-accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.education-degree {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.education-field {
+  font-size: 0.95rem;
+  color: var(--blue-accent);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.education-meta {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.education-institution {
+  font-weight: 500;
+}
+
+.education-year {
+  background: var(--light-blue);
+  color: var(--blue-accent);
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.education-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+.education-highlights li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+.bullet-dot {
+  color: var(--blue-accent);
+  font-weight: 800;
+}
+
+/* ═══════════════════════════════════════════
+   CATEGORY SKILLS CARDS (LIGHT GLASS STYLE)
+   ═══════════════════════════════════════════ */
+.category-skills-container {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.category-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.category-glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 0 20px rgba(37, 99, 235, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.category-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -5px rgba(37, 99, 235, 0.14);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.category-card-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -0.01em;
+}
+
+.category-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.symbolic-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #eaf4ff;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  color: #1d4ed8;
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04);
+}
+
+.symbolic-skill-badge:hover {
+  background: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
+  border-color: #2563eb;
+}
+
+.badge-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-name-text {
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT ME PROFILE PHOTO SHOWCASE
+   ═══════════════════════════════════════════ */
+.about-profile-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.about-profile-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18), 0 0 25px rgba(37, 99, 235, 0.1);
+  border: 4px solid #ffffff;
+  transition: all 0.35s ease;
+  background: var(--light-blue);
+}
+
+.about-profile-frame:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 22px 50px rgba(37, 99, 235, 0.28);
+}
+
+.about-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-photo-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #2563eb;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+
