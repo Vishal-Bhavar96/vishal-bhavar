@@ -17,7 +17,7 @@ export default function Footer() {
                 borderRadius: "10px",
                 display: "flex",
                 alignItems: "center",
-                justify-content: "center",
+                justifyContent: "center",
                 fontWeight: "800",
                 fontSize: "1.1rem",
               }}
@@ -55,9 +55,9 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>&copy; {new Date().getFullYear()} Vishal Bhavar. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Vishal Bhavar. All rights reserved.</span>
         <span>Built with Next.js 14, TypeScript and Tailwind CSS</span>
       </div>
-    </footer >
+    </footer>
   );
 }
