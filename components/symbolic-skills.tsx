@@ -2,12 +2,17 @@
 
 import React from "react";
 
+export interface SkillItem {
+  name: string;
+  icon: React.ReactNode;
+  color: string;
+  bg: string;
+  borderColor: string;
+}
+
 export interface SkillCategoryGroup {
   title: string;
-  skills: {
-    name: string;
-    icon: React.ReactNode;
-  }[];
+  skills: SkillItem[];
 }
 
 export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
@@ -16,6 +21,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "Python",
+        color: "#1e40af",
+        bg: "rgba(59, 130, 246, 0.1)",
+        borderColor: "rgba(59, 130, 246, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <linearGradient id="py-a-p" x1="18.5" y1="18.5" x2="72.5" y2="72.5" gradientUnits="userSpaceOnUse">
@@ -33,6 +41,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "SQL",
+        color: "#0284c7",
+        bg: "rgba(2, 132, 199, 0.1)",
+        borderColor: "rgba(2, 132, 199, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <ellipse cx="64" cy="38" rx="34" ry="14" fill="#00A8E8" />
@@ -49,6 +60,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "Django",
+        color: "#047857",
+        bg: "rgba(16, 185, 129, 0.1)",
+        borderColor: "rgba(16, 185, 129, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#092E20" />
@@ -58,6 +72,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "HTML5",
+        color: "#c2410c",
+        bg: "rgba(249, 115, 22, 0.1)",
+        borderColor: "rgba(249, 115, 22, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <path fill="#E34F26" d="M19 114.7L9.4 7h109.2l-9.6 107.7L63.9 121" />
@@ -68,6 +85,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "CSS3",
+        color: "#0284c7",
+        bg: "rgba(14, 165, 233, 0.1)",
+        borderColor: "rgba(14, 165, 233, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <path fill="#1572B6" d="M19 114.7L9.4 7h109.2l-9.6 107.7L63.9 121" />
@@ -78,6 +98,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "JavaScript",
+        color: "#a16207",
+        bg: "rgba(234, 179, 8, 0.12)",
+        borderColor: "rgba(234, 179, 8, 0.3)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="16" fill="#F7DF1E" />
@@ -92,6 +115,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "MySQL",
+        color: "#0f766e",
+        bg: "rgba(20, 184, 166, 0.1)",
+        borderColor: "rgba(20, 184, 166, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#00618A" />
@@ -101,6 +127,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "MongoDB",
+        color: "#15803d",
+        bg: "rgba(34, 197, 94, 0.1)",
+        borderColor: "rgba(34, 197, 94, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#11271D" />
@@ -111,6 +140,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "SQLite",
+        color: "#0369a1",
+        bg: "rgba(2, 132, 199, 0.1)",
+        borderColor: "rgba(2, 132, 199, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#0F2D37" />
@@ -125,6 +157,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "OpenCV",
+        color: "#6d28d9",
+        bg: "rgba(139, 92, 246, 0.1)",
+        borderColor: "rgba(139, 92, 246, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#121824" />
@@ -136,17 +171,23 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "Facial Recognition",
+        color: "#0284c7",
+        bg: "rgba(6, 182, 212, 0.1)",
+        borderColor: "rgba(6, 182, 212, 0.25)",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
-            <circle cx="9" cy="9" r="1" fill="#2563eb" />
-            <circle cx="15" cy="9" r="1" fill="#2563eb" />
+            <circle cx="9" cy="9" r="1" fill="#0284c7" />
+            <circle cx="15" cy="9" r="1" fill="#0284c7" />
             <path d="M10 15a2 2 0 0 0 4 0" />
           </svg>
         ),
       },
       {
         name: "Artificial Intelligence",
+        color: "#7c3aed",
+        bg: "rgba(124, 58, 237, 0.1)",
+        borderColor: "rgba(124, 58, 237, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#0A192F" />
@@ -162,6 +203,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "Git",
+        color: "#b91c1c",
+        bg: "rgba(239, 68, 68, 0.1)",
+        borderColor: "rgba(239, 68, 68, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#1E1715" />
@@ -171,6 +215,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "Visual Studio Code",
+        color: "#0284c7",
+        bg: "rgba(14, 165, 233, 0.1)",
+        borderColor: "rgba(14, 165, 233, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#0066B8" />
@@ -180,6 +227,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "MySQL Workbench",
+        color: "#0f766e",
+        bg: "rgba(20, 184, 166, 0.1)",
+        borderColor: "rgba(20, 184, 166, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#005B88" />
@@ -189,6 +239,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "Linux (Ubuntu)",
+        color: "#c2410c",
+        bg: "rgba(249, 115, 22, 0.1)",
+        borderColor: "rgba(249, 115, 22, 0.25)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#2C001E" />
@@ -210,7 +263,15 @@ export default function SymbolicSkills() {
             <h3 className="category-card-title">{catGroup.title}</h3>
             <div className="category-pills-row">
               {catGroup.skills.map((skill) => (
-                <div key={skill.name} className="symbolic-skill-badge">
+                <div
+                  key={skill.name}
+                  className="symbolic-skill-badge"
+                  style={{
+                    color: skill.color,
+                    background: skill.bg,
+                    borderColor: skill.borderColor,
+                  }}
+                >
                   <span className="badge-icon-wrap">{skill.icon}</span>
                   <span className="badge-name-text">{skill.name}</span>
                 </div>

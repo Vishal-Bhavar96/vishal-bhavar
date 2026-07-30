@@ -110,13 +110,12 @@ export default function GlassHero() {
           {/* Left Column (30% Text & Actions) */}
           <div className="hero-left">
             <div className="hero__greeting">
-              <span>👋</span>
-              <span>Hi, I&apos;m Vishal Bhavar</span>
+              <span>Vishal Bhavar</span>
             </div>
 
             <h1 className="hero__heading">
               Python Full Stack <br />
-              <span style={{ color: "var(--blue-accent)" }}>Developer</span>
+              <span className="hero__heading-highlight">Developer</span>
             </h1>
 
             <p className="hero__subtitle">
