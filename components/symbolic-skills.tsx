@@ -157,9 +157,9 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
     skills: [
       {
         name: "OpenCV",
-        color: "#6d28d9",
-        bg: "rgba(139, 92, 246, 0.1)",
-        borderColor: "rgba(139, 92, 246, 0.25)",
+        color: "#059669",
+        bg: "rgba(16, 185, 129, 0.12)",
+        borderColor: "rgba(16, 185, 129, 0.3)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#121824" />
@@ -171,23 +171,23 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
       },
       {
         name: "Facial Recognition",
-        color: "#0284c7",
-        bg: "rgba(6, 182, 212, 0.1)",
-        borderColor: "rgba(6, 182, 212, 0.25)",
+        color: "#2563eb",
+        bg: "rgba(37, 99, 235, 0.12)",
+        borderColor: "rgba(37, 99, 235, 0.3)",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
-            <circle cx="9" cy="9" r="1" fill="#0284c7" />
-            <circle cx="15" cy="9" r="1" fill="#0284c7" />
+            <circle cx="9" cy="9" r="1" fill="#2563eb" />
+            <circle cx="15" cy="9" r="1" fill="#2563eb" />
             <path d="M10 15a2 2 0 0 0 4 0" />
           </svg>
         ),
       },
       {
         name: "Artificial Intelligence",
-        color: "#7c3aed",
-        bg: "rgba(124, 58, 237, 0.1)",
-        borderColor: "rgba(124, 58, 237, 0.25)",
+        color: "#d97706",
+        bg: "rgba(245, 158, 11, 0.12)",
+        borderColor: "rgba(245, 158, 11, 0.3)",
         icon: (
           <svg width="22" height="22" viewBox="0 0 128 128">
             <rect width="128" height="128" rx="20" fill="#0A192F" />
@@ -257,6 +257,24 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
 export default function SymbolicSkills() {
   return (
     <div className="category-skills-container">
+      <div style={{ marginBottom: "1.75rem" }}>
+        <h2 style={{ 
+          fontSize: "1.65rem", 
+          fontWeight: "800", 
+          color: "#0f172a", 
+          display: "flex", 
+          alignItems: "center", 
+          gap: "0.6rem",
+          margin: 0
+        }}>
+          <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "linear-gradient(135deg, #2563eb, #7c3aed)", display: "inline-block" }} />
+          Technical Skills
+        </h2>
+        <p style={{ color: "#6b7280", fontSize: "1rem", marginTop: "0.3rem", margin: 0 }}>
+          Core programming languages, web frameworks, databases, AI/CV tools, and engineering environments.
+        </p>
+      </div>
+
       <div className="category-skills-grid">
         {CATEGORY_SKILLS_DATA.map((catGroup) => (
           <div key={catGroup.title} className="category-glass-card">

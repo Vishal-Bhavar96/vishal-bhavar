@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -45,8 +46,15 @@ export default function Navbar() {
 
   return (
     <nav className="navbar" aria-label="Main Navigation">
-      <Link href="/" className="navbar__brand">
-        <div className="navbar__brand-logo">V</div>
+      <Link href="/" className="navbar__brand" style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
+        <Image
+          src="/images/site-logo.jpg"
+          alt="VB Logo"
+          width={38}
+          height={38}
+          style={{ borderRadius: "50%", objectFit: "cover", boxShadow: "0 2px 10px rgba(0,0,0,0.18)" }}
+          priority
+        />
         <span>Vishal Bhavar</span>
       </Link>
 

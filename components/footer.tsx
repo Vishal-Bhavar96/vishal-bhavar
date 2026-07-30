@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const TOPMATE_URL = "https://topmate.io/suryansh777777/1820500";
 
@@ -38,8 +39,14 @@ export default function Footer() {
       <div className="footer-main">
         <div className="footer-content">
           <div>
-            <div className="footer-brand-header">
-              <div className="footer-logo-badge">V</div>
+            <div className="footer-brand-header" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <Image
+                src="/images/site-logo.jpg"
+                alt="VB Logo"
+                width={40}
+                height={40}
+                style={{ borderRadius: "50%", objectFit: "cover", border: "1px solid rgba(255,255,255,0.2)" }}
+              />
               <span className="footer-brand-title">Vishal Bhavar</span>
             </div>
             <p className="footer-brand-desc">

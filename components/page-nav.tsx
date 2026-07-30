@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const TOPMATE = "https://topmate.io/suryansh777777/1820500";
@@ -18,20 +19,14 @@ export default function PageNav() {
   return (
     <nav className="page-nav" aria-label="Primary navigation">
       <div className="page-nav__left">
-        <Link href="/" className="page-nav__brand" aria-label="Home">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M8 6 L24 6 L24 10 L12 10 L12 14 L24 14 L24 26 L8 26 L8 22 L20 22 L20 18 L8 18 Z"
-              fill="#0d0e10"
-            />
-          </svg>
+        <Link href="/" className="page-nav__brand" aria-label="Home" style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          <Image
+            src="/images/site-logo.jpg"
+            alt="VB Logo"
+            width={34}
+            height={34}
+            style={{ borderRadius: "50%", objectFit: "cover" }}
+          />
           <span className="page-nav__brand-name">Vishal</span>
         </Link>
       </div>
