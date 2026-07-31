@@ -94,7 +94,7 @@ const PROJECTS = [
   {
     title: "AI-Assisted Smart Attendance System Using Face Recognition",
     year: "2026",
-    titleGradient: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #7c3aed 100%)",
+    titleGradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 75%, #0284c7 100%)",
     bulletDotColor: "#2563eb",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -114,10 +114,10 @@ const PROJECTS = [
   {
     title: "Hotel Face Loyalty — AI-Powered Hotel Management System",
     year: "2026",
-    titleGradient: "linear-gradient(135deg, #059669 0%, #0d9488 50%, #0284c7 100%)",
-    bulletDotColor: "#059669",
+    titleGradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 75%, #0284c7 100%)",
+    bulletDotColor: "#2563eb",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M12 8v4M12 16h.01" />
       </svg>

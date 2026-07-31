@@ -26,27 +26,27 @@ export default function AboutPage() {
               gap: "0.65rem",
               padding: "0.55rem 1.35rem",
               borderRadius: "50px",
-              background: "linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.14) 100%)",
-              border: "1px solid rgba(16, 185, 129, 0.32)",
-              boxShadow: "0 6px 24px rgba(16, 185, 129, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.9)",
+              background: "linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.1) 50%, rgba(6, 182, 212, 0.1) 100%)",
+              border: "1px solid rgba(37, 99, 235, 0.3)",
+              boxShadow: "0 6px 24px rgba(37, 99, 235, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.9)",
               backdropFilter: "blur(10px)",
             }}>
               <span style={{ 
                 width: "9px", 
                 height: "9px", 
                 borderRadius: "50%", 
-                background: "linear-gradient(135deg, #10b981, #06b6d4)",
-                boxShadow: "0 0 10px rgba(16, 185, 129, 0.8)",
+                background: "linear-gradient(135deg, #2563eb, #7c3aed)",
+                boxShadow: "0 0 10px rgba(37, 99, 235, 0.8)",
                 display: "inline-block" 
               }} />
               <span style={{
                 fontSize: "1.12rem",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
-                background: "linear-gradient(135deg, #047857 0%, #0d9488 45%, #0891b2 100%)",
+                background: "linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #06b6d4 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 1px 2px rgba(16, 185, 129, 0.15))"
+                filter: "drop-shadow(0 1px 2px rgba(37, 99, 235, 0.15))"
               }}>
                 Python Full Stack Developer &amp; AI Engineer
               </span>
@@ -60,31 +60,6 @@ export default function AboutPage() {
               {/* Bio & Details */}
               <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 <div>
-                  <div style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    padding: "0.38rem 0.95rem",
-                    borderRadius: "24px",
-                    background: "linear-gradient(180deg, #ffffff 0%, #fff7ed 55%, #ffedd5 100%)",
-                    border: "1px solid rgba(249, 115, 22, 0.4)",
-                    boxShadow: "0 3px 0 #ea580c, 0 6px 18px rgba(234, 88, 12, 0.18), inset 0 1px 2px #ffffff",
-                    marginBottom: "0.75rem"
-                  }}>
-                    <span style={{
-                      fontSize: "0.83rem", 
-                      fontWeight: "800", 
-                      letterSpacing: "0.08em", 
-                      textTransform: "uppercase", 
-                      background: "linear-gradient(180deg, #d97706 0%, #b45309 60%, #78350f 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      filter: "drop-shadow(0 1px 0 rgba(255, 255, 255, 0.9))"
-                    }}>
-                      ✦ Software &amp; AI Architect
-                    </span>
-                  </div>
-
                   <h2 style={{ fontSize: "2.4rem", fontWeight: "800", lineHeight: "1.15", margin: 0, letterSpacing: "-0.02em" }}>
                     <span style={{ 
                       background: "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #c026d3 100%)", 

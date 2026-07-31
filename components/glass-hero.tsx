@@ -107,10 +107,10 @@ export default function GlassHero() {
       <Navbar />
       <section className="hero-wrapper">
         <div className="hero-container">
-          {/* Left Column (30% Text & Actions) */}
+          {/* Left Column (Text & Actions) */}
           <div className="hero-left">
             <div className="hero__greeting">
-              <span>Vishal Bhavar</span>
+              <span className="hero__greeting-name">✦ Vishal Bhavar</span>
             </div>
 
             <h1 className="hero__heading">
@@ -148,7 +148,7 @@ export default function GlassHero() {
             </div>
           </div>
 
-          {/* Right Column (70% Portrait Frame with Liquid Mask) */}
+          {/* Right Column (Portrait Frame) */}
           <div className="hero-right">
             <div
               ref={frameRef}
