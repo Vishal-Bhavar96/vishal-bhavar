@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const EMAIL_ID = "bhavarvishal31@gmail.com";
-const TOPMATE_URL = "https://topmate.io/suryansh777777/1820500";
+const TOPMATE_URL = "https://topmate.io/vishal";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -15,36 +15,68 @@ export default function ContactPage() {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+
+  const [serverMsg, setServerMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setErrorMsg("");
 
     try {
+      // 1. Send via primary API route (FormSubmit backend relay)
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       if (res.ok && data.success) {
         setSubmitted(true);
+        setServerMsg(data.message || `Your message has been sent to ${EMAIL_ID}!`);
+        setName("");
+        setEmail("");
+        setMessage("");
+        return;
+      }
+
+      // 2. Direct client-side FormSubmit fetch fallback
+      const directRes = await fetch(`https://formsubmit.co/ajax/${EMAIL_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `New Portfolio Contact Message from ${name}`,
+          _replyto: email,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      const directData = await directRes.json().catch(() => ({}));
+
+      if (directRes.ok || directData.success === "true" || directData.success === true) {
+        setSubmitted(true);
+        setServerMsg(`Your message has been delivered to ${EMAIL_ID}!`);
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        // Fallback directly to mailto if API network fails
-        window.location.href = `mailto:${EMAIL_ID}?subject=${encodeURIComponent(`Contact from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        // 3. Email client fallback
+        window.location.href = `mailto:${EMAIL_ID}?subject=${encodeURIComponent(`Portfolio Inquiry from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
         setSubmitted(true);
+        setServerMsg(`Opening your email client to send message to ${EMAIL_ID}`);
       }
     } catch {
-      // Direct mailto fallback
-      window.location.href = `mailto:${EMAIL_ID}?subject=${encodeURIComponent(`Contact from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = `mailto:${EMAIL_ID}?subject=${encodeURIComponent(`Portfolio Inquiry from ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
       setSubmitted(true);
+      setServerMsg(`Opening your email client to send message to ${EMAIL_ID}`);
     } finally {
       setLoading(false);
     }
@@ -65,12 +97,12 @@ export default function ContactPage() {
           <p className="section-subtitle">Let&apos;s connect and build something great together</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem", maxWidth: "1000px", margin: "0 auto" }}>
-            
-            {/* Get In Touch Info */}
+
+            {/* Get In Touch Info Card */}
             <div className="glass-card" style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "#111827" }}>Get In Touch</h2>
               <p style={{ color: "#4b5563", fontSize: "1rem", lineHeight: "1.7" }}>
-                Whether you have an upcoming project, a job opportunity, or simply want to connect regarding Python, AI, or Full Stack development, feel free to reach out directly via email or schedule a call.
+                Whether you have an upcoming project, a job opportunity, or simply want to connect regarding Python, AI, or Full Stack development, feel free to reach out directly.
               </p>
 
               {/* Direct Email Address Box */}
@@ -81,13 +113,12 @@ export default function ContactPage() {
                 border: "1px solid rgba(37, 99, 235, 0.2)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.75rem",
-                marginTop: "0.5rem"
+                gap: "0.75rem"
               }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.05em", color: "#2563eb" }}>
-                  Direct Email Address
+                  Official Email Address
                 </span>
-                
+
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem", flexWrap: "wrap" }}>
                   <a
                     href={`mailto:${EMAIL_ID}`}
@@ -128,14 +159,26 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "0.5rem" }}>
+              {/* Direct Mailto Launcher Button */}
+              <a
+                href={`mailto:${EMAIL_ID}?subject=Portfolio%20Inquiry%20from%20Website`}
+                className="btn-secondary"
+                style={{ textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}
+              >
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Open in Email App ({EMAIL_ID})</span>
+              </a>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "0.25rem" }}>
                 <a href={TOPMATE_URL} target="_blank" rel="noreferrer" className="btn-primary" style={{ textAlign: "center" }}>
                   Schedule 1-on-1 on Topmate
                 </a>
               </div>
             </div>
 
-            {/* Send a Message Form */}
+            {/* Send a Message Direct Form */}
             <div className="glass-card" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "#111827" }}>Send a Message</h2>
 
@@ -154,11 +197,12 @@ export default function ContactPage() {
                     ✓ Message Sent Successfully!
                   </div>
                   <p style={{ margin: 0, fontSize: "0.98rem", lineHeight: "1.6" }}>
-                    Thank you! Your message has been sent directly to <strong>{EMAIL_ID}</strong>. I will review it and reply back to your email shortly.
+                    {serverMsg || `Thank you! Your message has been routed directly to ${EMAIL_ID} via FormSubmit.`}
                   </p>
+
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => { setSubmitted(false); setServerMsg(""); }}
                     style={{
                       alignSelf: "flex-start",
                       fontSize: "0.85rem",
@@ -176,12 +220,16 @@ export default function ContactPage() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  {errorMsg && (
-                    <div style={{ padding: "0.75rem 1rem", borderRadius: "8px", background: "#fef2f2", border: "1px solid #fca5a5", color: "#b91c1c", fontSize: "0.9rem" }}>
-                      {errorMsg}
-                    </div>
-                  )}
+                <form
+                  onSubmit={handleSubmit}
+                  action={`https://formsubmit.co/${EMAIL_ID}`}
+                  method="POST"
+                  style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+                >
+                  <input type="hidden" name="_subject" value="New Portfolio Inquiry" />
+                  <input type="hidden" name="_replyto" value={email} />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
 
                   <div>
                     <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "#374151", marginBottom: "0.3rem" }}>
@@ -189,6 +237,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
+                      name="name"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -203,6 +252,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -216,6 +266,7 @@ export default function ContactPage() {
                       Message
                     </label>
                     <textarea
+                      name="message"
                       rows={4}
                       required
                       value={message}
@@ -233,6 +284,10 @@ export default function ContactPage() {
                   >
                     {loading ? "Sending Message..." : `Send Message to ${EMAIL_ID}`}
                   </button>
+
+                  <div style={{ fontSize: "0.82rem", color: "#64748b", lineHeight: "1.5", marginTop: "0.25rem", padding: "0.6rem 0.8rem", background: "rgba(37, 99, 235, 0.05)", borderRadius: "8px", border: "1px solid rgba(37, 99, 235, 0.12)" }}>
+                    💡 <strong>FormSubmit Integration Active:</strong> Messages are sent directly to <strong>{EMAIL_ID}</strong>. If this is your first form submission, check your Gmail inbox to click the one-time FormSubmit activation link!
+                  </div>
                 </form>
               )}
             </div>
