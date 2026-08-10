@@ -47,18 +47,18 @@ export default function ExperiencePage() {
                     Infosys Springboard Virtual Internship 7.0
                   </h2>
                   <p style={{ color: "#2563eb", fontWeight: "700", fontSize: "1.05rem", marginTop: "0.2rem" }}>
-                    Python Specialist Intern
+                    Software Engineer Intern
                   </p>
                 </div>
                 <span style={{ fontSize: "0.85rem", color: "#2563eb", fontWeight: "700", background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)", padding: "0.3rem 0.8rem", borderRadius: "20px" }}>
-                  Virtual Internship
+                  2026
                 </span>
               </div>
 
               <ul style={{ paddingLeft: "1.2rem", color: "#334155", lineHeight: "1.75", marginTop: "1rem", fontSize: "1.02rem" }}>
-                <li>Completed intensive training in Python full stack development, web architecture, and database management.</li>
-                <li>Worked on hands-on modules covering Object-Oriented Programming (OOP), file operations, and SQL integration.</li>
-                <li>Gained practical knowledge in enterprise coding standards, Git version control, and modular application design.</li>
+                <li>Contributed to the development of a Secure File-Sharing System with user authentication and file management features.</li>
+                <li>Assisted in implementing secure file sharing, access control, and backend functionalities.</li>
+                <li>Participated in testing, input validation, and debugging to improve application security and reliability.</li>
               </ul>
             </div>
           </div>

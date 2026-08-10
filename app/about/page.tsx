@@ -91,13 +91,13 @@ export default function AboutPage() {
                   gap: "1.2rem"
                 }}>
                   <p style={{ fontSize: "1.06rem", color: "#090d16", lineHeight: "1.8", margin: 0, fontWeight: "400" }}>
-                    I am a passionate software engineer specializing in <strong style={{ color: "#090d16", fontWeight: "700" }}>Python</strong>, <strong style={{ color: "#090d16", fontWeight: "700" }}>full-stack web application engineering</strong>, and <strong style={{ color: "#090d16", fontWeight: "700" }}>computer vision AI systems</strong>. My mission is to craft scalable backend APIs, intelligent facial recognition software, and high-performance databases.
+                    Motivated and enthusiastic aspiring Software Engineer with a strong foundation in <strong style={{ color: "#090d16", fontWeight: "700" }}>Python, SQL, Django, database management</strong>, and <strong style={{ color: "#090d16", fontWeight: "700" }}>Artificial Intelligence</strong>. Passionate about software development with hands-on experience in developing real-world applications.
                   </p>
 
                   <div style={{ height: "1px", width: "100%", background: "rgba(0, 0, 0, 0.08)" }} />
 
                   <p style={{ fontSize: "1.02rem", color: "#090d16", lineHeight: "1.8", margin: 0, fontWeight: "400" }}>
-                    With experience spanning <strong style={{ color: "#090d16", fontWeight: "700" }}>Django framework</strong>, <strong style={{ color: "#090d16", fontWeight: "700" }}>SQL database optimization (MySQL, PostgreSQL, SQLite)</strong>, and <strong style={{ color: "#090d16", fontWeight: "700" }}>computer vision pipelines (OpenCV)</strong>, I engineer production-ready solutions that solve real-world problems.
+                    Quick to learn new technologies, with strong problem-solving, analytical, and debugging skills, committed to delivering high-quality software solutions. Seeking an opportunity to contribute to organizational success while continuously enhancing technical expertise and growing as a software professional.
                   </p>
                 </div>
 

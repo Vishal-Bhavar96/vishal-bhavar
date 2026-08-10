@@ -8,7 +8,6 @@ const DESKTOP_RADIUS = 235;
 const MOBILE_RADIUS = 150;
 const LERP_POS = 0.14;
 const LERP_RAD = 0.12;
-const TOPMATE_URL = "https://topmate.io/suryansh777777/1820500";
 
 export default function GlassHero() {
   const frameRef = useRef<HTMLDivElement>(null);
@@ -109,10 +108,6 @@ export default function GlassHero() {
         <div className="hero-container">
           {/* Left Column (Text & Actions) */}
           <div className="hero-left">
-            <div className="hero__greeting">
-              <span className="hero__greeting-name">✦ Vishal Bhavar</span>
-            </div>
-
             <h1 className="hero__heading">
               Python Full Stack <br />
               <span className="hero__heading-highlight">Developer</span>
@@ -135,7 +130,8 @@ export default function GlassHero() {
               </Link>
 
               <a
-                href={TOPMATE_URL}
+                href="/Vishal_Bhavar_Resume.pdf"
+                download="Vishal_Bhavar_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"

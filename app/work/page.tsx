@@ -107,25 +107,25 @@ const PROJECTS = [
     tech: ["Python", "OpenCV", "Artificial Intelligence", "Computer Vision", "Facial Recognition"],
     bullets: [
       "Developed an AI-powered Smart Attendance System using Python and OpenCV to automate real-time student identification through facial recognition.",
-      "Implemented real-time face detection, recognition, and automated attendance recording, eliminating manual attendance while improving accuracy and efficiency.",
+      "Implemented real-time face detection, recognition, and automated attendance recording, reducing manual attendance effort while improving accuracy and efficiency.",
       "Designed and integrated a secure attendance database for reliable data storage, data integrity, and efficient record management and retrieval.",
     ],
   },
   {
-    title: "Hotel Face Loyalty — AI-Powered Hotel Management System",
+    title: "Secure File Sharing System",
     year: "2026",
     titleGradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 75%, #0284c7 100%)",
     bulletDotColor: "#2563eb",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M12 8v4M12 16h.01" />
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
     tech: ["Python", "OpenCV", "Facial Recognition", "SQLite"],
     bullets: [
-      "Developed an AI-powered hotel management system using Python, OpenCV, and facial recognition for secure, contactless guest identification and authentication.",
-      "Implemented a customer loyalty management system using SQLite to track guest visits, booking history, and automatically apply tier-based rewards and discounts.",
+      "Developed a secure web-based file sharing system using Python and Django, enabling authenticated users to upload, share, and download files securely with encryption and access control.",
+      "Implemented user authentication, file protection, and secure data management to prevent unauthorized access and improve confidentiality.",
     ],
   },
 ];

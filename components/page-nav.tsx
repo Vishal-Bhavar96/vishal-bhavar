@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const TOPMATE = "https://topmate.io/suryansh777777/1820500";
+const TOPMATE = "https://topmate.io/vishal";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },

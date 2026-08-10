@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const TOPMATE_URL = "https://topmate.io/suryansh777777/1820500";
+const TOPMATE_URL = "https://topmate.io/vishal";
 
 export default function Footer() {
   return (

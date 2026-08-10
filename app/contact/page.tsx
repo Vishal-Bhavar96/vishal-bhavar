@@ -101,9 +101,6 @@ export default function ContactPage() {
             {/* Get In Touch Info Card */}
             <div className="glass-card" style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "#111827" }}>Get In Touch</h2>
-              <p style={{ color: "#4b5563", fontSize: "1rem", lineHeight: "1.7" }}>
-                Whether you have an upcoming project, a job opportunity, or simply want to connect regarding Python, AI, or Full Stack development, feel free to reach out directly.
-              </p>
 
               {/* Direct Email Address Box */}
               <div style={{

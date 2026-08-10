@@ -53,6 +53,19 @@ export const CATEGORY_SKILLS_DATA: SkillCategoryGroup[] = [
           </svg>
         ),
       },
+      {
+        name: "Linux (OS)",
+        color: "#c2410c",
+        bg: "rgba(249, 115, 22, 0.1)",
+        borderColor: "rgba(249, 115, 22, 0.25)",
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 128 128">
+            <rect width="128" height="128" rx="20" fill="#2C001E" />
+            <circle cx="64" cy="64" r="40" fill="#E95420" />
+            <circle cx="64" cy="64" r="28" fill="#FFF" opacity="0.9" />
+          </svg>
+        ),
+      },
     ],
   },
   {

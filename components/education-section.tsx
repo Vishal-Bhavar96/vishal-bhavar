@@ -15,25 +15,31 @@ export interface EducationItem {
 const EDUCATION_DATA: EducationItem[] = [
   {
     degree: "Bachelor of Engineering (B.E.)",
-    field: "Electronics & Telecommunication Engineering (E&TC)",
-    institution: "Amrutvahini College of Engineering, Sangamner",
-    year: "",
+    field: "Electronics and Telecommunication Engineering",
+    institution: "Amrutvahini College of Engineering (AVCOE), Sangamner",
+    year: "2027",
     logo: "/images/college-logo.png",
     highlights: [
-      "Focused on Data Structures, Algorithms, Python Programming, and Database Systems.",
-      "Specialized coursework in Artificial Intelligence, Computer Vision (OpenCV), and Web Application Development.",
-      "Completed hands-on software engineering projects in AI-driven smart attendance and facial recognition systems.",
+      "Specialized in Python programming, SQL databases, Django backend framework, and Artificial Intelligence.",
+      "Engineered real-world projects including AI-Assisted Smart Attendance System using Face Recognition.",
     ],
   },
   {
-    degree: "Infosys Springboard Certification & Virtual Internship",
-    field: "Python Full Stack Development & Specialization",
-    institution: "Infosys Springboard 7.0",
-    year: "2026",
-    logo: "/images/infosys-springboard-logo.jpg",
+    degree: "Higher Secondary Certificate (HSC)",
+    field: "Science & Technology (Percentage: 58.50%)",
+    institution: "H.P.L. College, Krishnapur, Bidkin",
+    year: "2023",
     highlights: [
-      "Advanced Python backend development with Django, Object-Oriented System Architecture, and SQL databases.",
-      "Hands-on full stack application development and software quality best practices.",
+      "Completed Higher Secondary education with focus on Science and Technology fundamentals.",
+    ],
+  },
+  {
+    degree: "Secondary School Certificate (SSC)",
+    field: "General Academics (Percentage: 87.40%)",
+    institution: "Sandipan Vidhyalaya, Shekta",
+    year: "2021",
+    highlights: [
+      "Achieved 87.40% in Secondary School Certificate examinations with distinction.",
     ],
   },
 ];
